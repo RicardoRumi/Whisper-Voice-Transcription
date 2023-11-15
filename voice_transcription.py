@@ -77,7 +77,7 @@ def stop_recording():
 def on_press(key):
     global is_recording, recording_thread
     try:
-        if key == keyboard.Key.ctrl_r and not is_recording:
+        if key == keyboard.Key.cmd_r and not is_recording:
             recording_thread = threading.Thread(target=start_recording)
             recording_thread.daemon = True
             recording_thread.start()
@@ -87,7 +87,7 @@ def on_press(key):
 def on_release(key):
     global is_recording
     try:
-        if key == keyboard.Key.ctrl_r and is_recording:
+        if key == keyboard.Key.cmd_r  and is_recording:
             stop_recording()
     except AttributeError:
         pass
