@@ -23,7 +23,7 @@ lock_socket = create_socket_lock()
 API_KEY_FILE = 'openai_api_key.txt'
 
 def get_api_key():
-    return "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"
+    return "CREDENTIAL"
 
 FORMAT = pyaudio.paInt16
 CHANNELS = 1
