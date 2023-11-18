@@ -7,10 +7,23 @@ import pyperclip
 import pyautogui
 import os
 
+import socket
+import sys
+
+def create_socket_lock(port=52245):
+    """ Try to bind to a socket on localhost at the specified port. """
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.bind(('127.0.0.1', port))
+        return s
+    except socket.error:
+        sys.exit("Another instance of the script is running.")
+
+lock_socket = create_socket_lock()
 API_KEY_FILE = 'openai_api_key.txt'
 
 def get_api_key():
-    return "CREDENTIAL"
+    return "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"
 
 FORMAT = pyaudio.paInt16
 CHANNELS = 1
